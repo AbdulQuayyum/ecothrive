@@ -131,7 +131,7 @@ html {
 
 .hero-section {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://via.placeholder.com/1920x1080/4CAF50/FFFFFF?text=Organic+Farm+Background');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
