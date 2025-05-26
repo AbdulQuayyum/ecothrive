@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EcoThrive Farms</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-leaf text-success me-2"></i>EcoThrive Farms
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title animate-fade-up">Contact Us</h1>
+                    <p class="page-subtitle animate-fade-up-delay">Get in touch with EcoThrive Farms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <div class="contact-form-wrapper animate-on-scroll">
+                        <h2 class="section-title mb-4">Send Us a Message</h2>
+                        <p class="mb-4">Have questions about our products or services? We'd love to hear from you. Send
+                            us a message and we'll respond as soon as possible.</p>
+
+                        <form id="contactForm" class="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                    <div class="invalid-feedback">Please provide your first name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                    <div class="invalid-feedback">Please provide your last name.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">Please provide a valid email address.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="">Choose a subject...</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="order">Place an Order</option>
+                                        <option value="delivery">Delivery Question</option>
+                                        <option value="consultation">Consultation Request</option>
+                                        <option value="feedback">Feedback</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a subject.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" rows="5" required
+                                        placeholder="Tell us how we can help you..."></textarea>
+                                    <div class="invalid-feedback">Please provide a message.</div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter">
+                                        <label class="form-check-label" for="newsletter">
+                                            Subscribe to our newsletter for updates and special offers
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-success btn-lg pulse-btn">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="successMessage" class="alert alert-success mt-4" style="display: none;">
+                            <i class="fas fa-check-circle me-2"></i>
+                            Thank you for your message! We'll get back to you within 24 hours.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info animate-on-scroll">
+                        <h3 class="mb-4">Get in Touch</h3>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Visit Our Farm</h5>
+                                <p>Ilorin,<br>Kwara State,<br>Nigeria</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Call Us</h5>
+                                <p><a href="tel:+15551234567">+234 805 087 8080</a><br>
+                                    <small class="text-muted">Mon-Fri: 8AM-6PM<br>Sat: 8AM-4PM</small>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Email Us</h5>
+                                <p><a href="mailto:info@ecothrivefarms.com">info@ecothrivefarms.com</a><br>
+                                    <small class="text-muted">We respond within 24 hours</small>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Farm Store Hours</h5>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
+                                    Saturday: 8:00 AM - 4:00 PM<br>
+                                    Sunday: Closed</p>
+                            </div>
+                        </div>
+
+                        <div class="social-section mt-4">
+                            <h5 class="mb-3">Follow Us</h5>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="section-title animate-on-scroll">Find Us on the Map</h2>
+                <p class="section-subtitle animate-on-scroll">Visit our farm and see sustainable agriculture in action
+                </p>
+            </div>
+            <div class="map-container animate-on-scroll">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.7619145394013!2d4.671897514783327!3d8.479015299697592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103651978a6e9387%3A0x258ee7f77864e2cb!2sUniversity%20of%20Ilorin!5e0!3m2!1sen!2sng!4v1698425479684!5m2!1sen!2sng"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="rounded shadow">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3">
+                        <i class="fas fa-leaf text-success me-2"></i>EcoThrive Farms
+                    </h5>
+                    <p>Committed to sustainable farming and delivering the freshest organic produce from farm to table.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">Services</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Organic Vegetables</a></li>
+                        <li><a href="#" class="footer-link">Fresh Fruits</a></li>
+                        <li><a href="#" class="footer-link">Farm Delivery</a></li>
+                        <li><a href="#" class="footer-link">Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">Contact Info</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Ilorin, Kwara State, Nigeria.</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i>+234 805 087 8080</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>info@ecothrivefarms.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; <span id="currentYear"></span> EcoThrive Farms. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/scripts/main.js"></script>
+</body>
+
+</html>

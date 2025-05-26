@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoThrive Farms - Image Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .image-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="white" opacity="0.1"><circle cx="20" cy="20" r="2"/><circle cx="40" cy="30" r="1.5"/><circle cx="60" cy="25" r="2.5"/><circle cx="80" cy="35" r="1.8"/><circle cx="30" cy="50" r="2.2"/><circle cx="70" cy="55" r="1.7"/><circle cx="15" cy="70" r="2.8"/><circle cx="85" cy="75" r="1.3"/><circle cx="50" cy="80" r="2.5"/></svg>');
+        }
+        .image-info h3 {
+            margin: 0 0 10px 0;
+            color: #28a745;
+        }
+        .image-info p {
+            margin: 0;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        .download-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        .download-btn:hover {
+            background: #1e7e34;
+        }
+        h1 {
+            text-align: center;
+            color: #28a745;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #343a40;
+            border-bottom: 2px solid #28a745;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        .hero-image {
+            height: 300px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        linear-gradient(135deg, #28a745, #20c997);
+            position: relative;
+        }
+        .hero-image::after {
+            content: '🌱 Fresh Organic Farm 🌾';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .team-image {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            position: relative;
+        }
+        .team-image::after {
+            content: attr(data-name);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+        }
+        .service-image {
+            position: relative;
+        }
+        .service-image.vegetables {
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+        }
+        .service-image.fruits {
+            background: linear-gradient(45deg, #FF9800, #FFC107);
+        }
+        .service-image.delivery {
+            background: linear-gradient(45deg, #2196F3, #03A9F4);
+        }
+        .service-image.consultation {
+            background: linear-gradient(45deg, #9C27B0, #E91E63);
+        }
+        .service-image::after {
+            content: attr(data-service);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 EcoThrive Farms - Website Images</h1>
+        <p style="text-align: center; color: #6c757d; margin-bottom: 40px;">
+            High-quality placeholder images for the EcoThrive Farms website. These images are designed to match the website's green, eco-friendly theme.
+        </p>
+
+        <h2>Hero & Background Images</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <div class="image-placeholder hero-image"></div>
+                <div class="image-info">
+                    <h3>Hero Background (1920x1080)</h3>
+                    <p>Main hero section background featuring organic farm landscape with green fields and sustainable farming imagery.</p>
+                    <button class="download-btn" onclick="downloadImage('hero-bg', 1920, 1080, 'hero')">Download Image</button>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #4CAF50, #8BC34A);">
+                    🌾 Organic Farm Story 🌱
+                </div>
+                <div class="image-info">
+                    <h3>Farm Story Image (600x400)</h3>
+                    <p>Image showcasing the farm's history and sustainable practices for the About page.</p>
+                    <button class="download-btn" onclick="downloadImage('farm-story', 600, 400, 'story')">Download Image</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Service Images</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <div class="image-placeholder service-image vegetables" data-service="🥬 Organic Vegetables 🥕"></div>
+                <div class="image-info">
+                    <h3>Organic Vegetables (400x250)</h3>
+                    <p>Fresh organic vegetables including lettuce, carrots, tomatoes, and other seasonal produce.</p>
+                    <button class="download-btn" onclick="downloadImage('vegetables', 400, 250, 'vegetables')">Download Image</button>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <div class="image-placeholder service-image fruits" data-service="🍎 Fresh Fruits 🍓"></div>
+                <div class="image-info">
+                    <h3>Fresh Fruits (400x250)</h3>
+                    <p>Seasonal organic fruits including apples, berries, and other tree-ripened produce.</p>
+                    <button class="download-btn" onclick="downloadImage('fruits', 400, 250, 'fruits')">Download Image</button>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <div class="image-placeholder service-image delivery" data-service="🚚 Farm Delivery 📦"></div>
+                <div class="image-info">
+                    <h3>Farm Delivery (400x250)</h3>
+                    <p>Delivery truck and fresh produce packaging showing farm-to-door service.</p>
+                    <button class="download-btn" onclick="downloadImage('delivery', 400, 250, 'delivery')">Download Image</button>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <div class="image-placeholder service-image consultation" data-service="👨‍🌾 Farm Consultation 📋"></div>
+                <div class="image-info">
+                    <h3>Farm Consultation (400x250)</h3>
+                    <p>Agricultural expert providing consultation services and sustainable farming advice.</p>
+                    <button class="download-btn" onclick="downloadImage('consultation', 400, 250, 'consultation')">Download Image</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Team Member Images</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <div class="image-placeholder team-image" data-name="Maria Rodriguez"></div>
+                <div class="image-info">
+                    <h3>Maria Rodriguez - Co-Founder (300x300)</h3>
+                    <p>Professional headshot of Maria Rodriguez, Co-Founder and CEO of EcoThrive Farms.</p>
+                    <button class="download-btn" onclick="downloadImage('maria', 300, 300, 'team')">Download Image</button>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <div class="image-placeholder team-image" data-name="Carlos Rodriguez"></div>
+                <div class="image-info">
+                    <h3>Carlos Rodriguez - Co-Founder (300x300)</h3>
+                    <p>Professional headshot of Carlos Rodriguez, Co-Founder and Operations Manager.</p>
+                    <button class="download-btn" onclick="downloadImage('carlos', 300, 300, 'team')">Download Image</button>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <div class="image-placeholder team-image" data-name="Sarah Johnson"></div>
+                <div class="image-info">
+                    <h3>Sarah Johnson - Sustainability Head (300x300)</h3>
+                    <p>Professional headshot of Sarah Johnson, Head of Sustainability.</p>
+                    <button class="download-btn" onclick="downloadImage('sarah', 300, 300, 'team')">Download Image</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Additional Images</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #28a745, #20c997);">
+                    🌱 Organic Farm Introduction 🌿
+                </div>
+                <div class="image-info">
+                    <h3>Farm Introduction (600x400)</h3>
+                    <p>General farm image for the homepage introduction section.</p>
+                    <button class="download-btn" onclick="downloadImage('intro', 600, 400, 'intro')">Download Image</button>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #20c997, #17a2b8);">
+                    📍 Farm Location Map 🗺️
+                </div>
+                <div class="image-info">
+                    <h3>Farm Location (400x300)</h3>
+                    <p>Aerial view or map showing the farm location in Green Valley.</p>
+                    <button class="download-btn" onclick="downloadImage('location', 400, 300, 'location')">Download Image</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadImage(name, width, height, type) {
+            // Create canvas
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = width;
+            canvas.height = height;
+
+            // Set background gradient based on type
+            let gradient;
+            switch(type) {
+                case 'hero':
+                    gradient = ctx.createLinearGradient(0, 0, width, height);
+                    gradient.addColorStop(0, '#28a745');
+                    gradient.addColorStop(1, '#20c997');
+                    break;
+                case 'vegetables':
+                    gradient = ctx.createLinearGradient(0, 0, width, height);
+                    gradient.addColorStop(0, '#4CAF50');
+                    gradient.addColorStop(1, '#8BC34A');
+                    break;
+                case 'fruits':
+                    gradient = ctx.createLinearGradient(0, 0, width, height);
+                    gradient.addColorStop(0, '#FF9800');
+                    gradient.addColorStop(1, '#FFC107');
+                    break;
+                case 'delivery':
+                    gradient = ctx.createLinearGradient(0, 0, width, height);
+                    gradient.addColorStop(0, '#2196F3');
+                    gradient.addColorStop(1, '#03A9F4');
+                    break;
+                case 'consultation':
+                    gradient = ctx.createLinearGradient(0, 0, width, height);
+                    gradient.addColorStop(0, '#9C27B0');
+                    gradient.addColorStop(1, '#E91E63');
+                    break;
+                case 'team':
+                    gradient = ctx.createLinearGradient(0, 0, width, height);
+                    gradient.addColorStop(0, '#28a745');
+                    gradient.addColorStop(1, '#20c997');
+                    break;
+                default:
+                    gradient = ctx.createLinearGradient(0, 0, width, height);
+                    gradient.addColorStop(0, '#28a745');
+                    gradient.addColorStop(1, '#20c997');
+            }
+
+            // Fill background
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+
+            // Add overlay for hero images
+            if (type === 'hero') {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+                ctx.fillRect(0, 0, width, height);
+            }
+
+            // Add decorative elements
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            for (let i = 0; i < 20; i++) {
+                const x = Math.random() * width;
+                const y = Math.random() * height;
+                const radius = Math.random() * 10 + 5;
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+
+            // Add text
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${Math.min(width, height) / 15}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            let text = '';
+            switch(name) {
+                case 'hero-bg':
+                    text = '🌱 EcoThrive Farms 🌾';
+                    break;
+                case 'farm-story':
+                    text = '🌾 Our Farm Story 🌱';
+                    break;
+                case 'vegetables':
+                    text = '🥬 Organic Vegetables 🥕';
+                    break;
+                case 'fruits':
+                    text = '🍎 Fresh Fruits 🍓';
+                    break;
+                case 'delivery':
+                    text = '🚚 Farm Delivery 📦';
+                    break;
+                case 'consultation':
+                    text = '👨‍🌾 Farm Consultation 📋';
+                    break;
+                case 'maria':
+                    text = 'Maria Rodriguez\nCo-Founder & CEO';
+                    break;
+                case 'carlos':
+                    text = 'Carlos Rodriguez\nCo-Founder & Operations';
+                    break;
+                case 'sarah':
+                    text = 'Sarah Johnson\nHead of Sustainability';
+                    break;
+                case 'intro':
+                    text = '🌱 Organic Farm 🌿';
+                    break;
+                case 'location':
+                    text = '📍 Green Valley Farm 🗺️';
+                    break;
+            }
+
+            // Handle multi-line text
+            const lines = text.split('\n');
+            const lineHeight = Math.min(width, height) / 12;
+            const startY = height / 2 - (lines.length - 1) * lineHeight / 2;
+
+            lines.forEach((line, index) => {
+                ctx.fillText(line, width / 2, startY + index * lineHeight);
+            });
+
+            // Add shadow effect
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+            ctx.shadowBlur = 10;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+
+            // Download the image
+            const link = document.createElement('a');
+            link.download = `ecothrive-${name}-${width}x${height}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    </script>
+</body>
+</html>
