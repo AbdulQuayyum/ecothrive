@@ -56,22 +56,38 @@ function initNavbarScroll() {
 }
 
 function initCounterAnimation() {
+    const counterElements = document.querySelectorAll('.stat-number');
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counterElements.forEach(el => counterObserver.observe(el));
 }
 
 function animateCounter(element) {
     const target = parseInt(element.getAttribute('data-count'));
-    const duration = 2000;
-    const increment = target / (duration / 16);
-    let current = 0;
+    const duration = 2000; 
+    const startTime = performance.now();
 
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(timer);
+    function updateCounter(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        const value = Math.floor(progress * target);
+
+        element.textContent = value + (target > 100 ? '+' : '');
+
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
         }
-        element.textContent = Math.floor(current) + (target > 100 ? '+' : '');
-    }, 16);
+    }
+
+    requestAnimationFrame(updateCounter);
 }
 
 function initContactForm() {
